@@ -32,7 +32,7 @@ public class DisplayFullPyramidTest {
 			
 			DisplayFullPyramid obj=new DisplayFullPyramid(); 
 			String str=new String();
-			str=obj.Spaces(3, 5);
+			str=obj.spaces(3, 5);
 			String expected="  ";
 			assertEquals(expected,str);
 			
@@ -43,7 +43,7 @@ public class DisplayFullPyramidTest {
 			 
 			DisplayFullPyramid obj=new DisplayFullPyramid(); 
 			String str=new String();
-			str=obj.Numbers(3, 5);
+			str=obj.numbers(3, 5);
 			String expected="12321";
 			assertEquals(expected,str);
 			
@@ -54,7 +54,7 @@ public class DisplayFullPyramidTest {
 			 
 			DisplayFullPyramid obj=new DisplayFullPyramid(); 
 			String str=new String();
-			str=obj.WholePyramid(3);
+			str=obj.wholePyramid(3);
 			String expected="  1\n 121\n12321\n 121\n  1\n";
 			assertEquals(expected,str);
 			

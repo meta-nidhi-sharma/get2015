@@ -2,9 +2,16 @@ package printPyramid;
 /**
 author: Nidhi Sharma
 Description: This program is to display a full pyramid
-Input: Number of rows in pyramid
+Input: Number of rows in pyramid(for ex. 3)
 Output: Display pyramid where pyramid is group of individual strings
- */
+
+o/p:         1
+            121  
+           12321
+            121
+             1
+         
+         */
 
 public class DisplayFullPyramid {
 			
@@ -14,10 +21,10 @@ public class DisplayFullPyramid {
 				java.util.Scanner sc=new java.util.Scanner(System.in);
 				System.out.println("enter n");
 				int n=sc.nextInt();
-				String Pyramid=new String();
+				String pyramid=new String();
 				DisplayFullPyramid obj=new DisplayFullPyramid();
-				Pyramid=obj.WholePyramid(n);
-				System.out.print(Pyramid);
+				pyramid=obj.wholePyramid(n);
+				System.out.print(pyramid);
 				sc.close();
 			  }
 			
@@ -26,58 +33,58 @@ public class DisplayFullPyramid {
 			 the function is returning whole pyramid in group of strings
 			 */
 			
-			String WholePyramid(int n){
-				String CombinedString=new String();               //to combine spaces string and numbers string
-				String SpaceString=new String();
-				String NumberString=new String();
+			String wholePyramid(int n){
+				String combinedString=new String();               //to combine spaces string and numbers string
+				String spaceString=new String();
+				String numberString=new String();
 				for(int row=1;row<=n;row++)
 				{
-					SpaceString=Spaces(row, n);
-					NumberString=Numbers(row, n);
-					CombinedString+=SpaceString+NumberString+"\n";                   //combining space string and number string with next line
+					spaceString=spaces(row, n);
+					numberString=numbers(row, n);
+					combinedString+=spaceString+numberString+"\n";                   //combining space string and number string with next line
 				}
 				for(int row=n-1;row>=1;row--)
 				{
-					SpaceString=Spaces(row, n);
-					NumberString=Numbers(row, n);
-					CombinedString+=SpaceString+NumberString+"\n";
+					spaceString=spaces(row, n);
+					numberString=numbers(row, n);
+					combinedString+=spaceString+numberString+"\n";
 					
 				}
-				return CombinedString;
+				return combinedString;
 			}
-			
-			/*
+		
+		/*
 			 Description: this function is adding spaces in each string
 			 */
 			
-			String Spaces(int row, int n){
-				String SpaceString=new String();                  //str1 is a string of spaces
+			String spaces(int row, int n){
+				String spaceString=new String();                  //str1 is a string of spaces
 				for(int i=1;i<=n-row;i++)
-					SpaceString+=" ";                   //adding spaces to string
+					spaceString+=" ";                   //adding spaces to string
 				
-				return SpaceString;
+				return spaceString;
 			}
 			
 			/*
 			 Description: This function is inserting numbers in each string
 			 */
 			
-			String Numbers(int row, int n){
-				String NumberString=new String();                    //str2 is a string of numbers
+			String numbers(int row, int n){
+				String numberString=new String();                    //str2 is a string of numbers
 				int count=0;                        //to print value of count as numbers 
 				for(int i=1;i<=2*row-1;i++)
 				{
 					if(i<=row)
 					{
-						NumberString+=++count;               //adding numbers to string
+						numberString+=++count;               //adding numbers to string
 					}
 					else
 					{
-						NumberString+=--count;	
+						numberString+=--count;	
 					}
 				}
 				//System.out.println(str2);
 				
-				return NumberString;
+				return numberString;
 			}
 	}
