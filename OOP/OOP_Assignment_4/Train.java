@@ -1,4 +1,4 @@
-package TrainReservationSystem;
+package MenuBasedTrainReservationSystem;
 
 /**
  * @author Nidhi

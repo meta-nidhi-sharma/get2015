@@ -1,4 +1,4 @@
-package TrainReservationSystem;
+package MenuBasedTrainReservationSystem;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class PaymentMode
 
 	private int requirement = 0;
 	private int fare = 0;
-	int totalAmount = 0;
+	private int totalAmount = 0;
 
 	public PaymentMode(int requirement, int train_fare) 
 	{
