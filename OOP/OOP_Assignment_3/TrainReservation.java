@@ -116,12 +116,12 @@ public class TrainReservation
 			String userName = sc.next();
 			System.out.println("Enter type of train you want(Enter P for Passenger train and G for Goods train)");
 			String trainType_User = sc.next();
-			System.out.println("Train Chart:\nTrain Id\tTrain Name\tFrom\tTo\tTime Duration\tFare\tAvailable");
 			
 			//For passenger type train: if user enters P it will show Passenger trains list
 			
 			if (trainType_User.compareTo("P") == 0) 
 			{
+				System.out.println(Constant.TRAIN_CHART);
 				java.util.Iterator<PassengerTrain> par1 = pTrainList.iterator();
 				while (par1.hasNext()) 
 				{
@@ -140,9 +140,10 @@ public class TrainReservation
 				while(par2.hasNext())
 				{
 					PassengerTrain pass = par2.next();
+					
+					// Compare users choice of source and destination and provide if train is available
 					if(from.compareTo(pass.train_From)==0 && to.compareTo(pass.train_To)==0)
 					{
-						System.out.println("Enter from and to station");
 						System.out.println(pass.train_ID + "\t\t" + pass.train_Name+ "\t" + pass.train_From + "\t" + pass.train_To+ "\t\t" + pass.travel_Duration + "\t"
 								+ pass.train_Fare + "\t" + pass.available_Seat);
 						System.out.println("Enter train name, train ID and requirement(seats if passenger train or weight in tones if goods train)");
@@ -211,6 +212,7 @@ public class TrainReservation
 		// For goods train
 		else if (trainType_User.compareTo("G") == 0)
 		{
+			System.out.println(Constant.TRAIN_CHART);
 			java.util.Iterator<GoodsTrain> par1 = gTrainList.iterator();
 			while (par1.hasNext()) //Loop to check whether there is more data if yes then display
 			{
@@ -230,7 +232,6 @@ public class TrainReservation
 				GoodsTrain good = par2.next();
 				if(from.compareTo(good.train_From)==0 && to.compareTo(good.train_To)==0)
 				{
-					System.out.println("Enter from and to station");
 					System.out.println(good.train_ID + "\t\t" + good.train_Name
 							+ "\t" + good.train_From + "\t" + good.train_To
 							+ "\t\t" + good.travel_Duration + "\t"
@@ -298,6 +299,8 @@ public class TrainReservation
 				}
 			}
 		}
+		else
+			System.out.println("Enter valid train type");
 		System.out.println("Enter '1' to continue more booking or '0' to exit");		
 		choice=sc.nextInt();
 		}while(choice==1);

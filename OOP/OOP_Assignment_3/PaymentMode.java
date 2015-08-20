@@ -62,7 +62,7 @@ public class PaymentMode
 		String userName = sc.next(); // User name
 		System.out.println("Password:");
 		String password = sc.next(); // enter password
-		System.out.println("\nBank Name: " + bankName + "\tUser Name: "
+		System.out.println("\nBank Name: " + bankName + "\t\tUser Name: "
 				+ userName + "\tPassword: **********");
 		totalAmount = requirement * fare;
 		return totalAmount;
