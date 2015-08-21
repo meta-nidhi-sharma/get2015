@@ -94,6 +94,8 @@ public class Booking {
 					System.out.println("Invalid Details or Seats not available");
 				break;
 			}
+			else
+				System.out.println("No trains available for this route");
 		}
 	}
 	
