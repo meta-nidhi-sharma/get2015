@@ -1,30 +1,27 @@
 package MenuBasedTrainReservationSystem;
 
 import java.util.Scanner;
-
 /**
- * @author Nidhi Description: This class is to process the payment of
+ * @author Nidhi
+ *Description: This class is to process the payment of
  *         train_fare. Having three different payment modes.
  */
 
 public class PaymentMode 
 {
-
-	private int requirement = 0;
-	private int fare = 0;
-	private int totalAmount = 0;
-
+	private int requirement = 0;	//To set no. of bookings
+	private int fare = 0;			//To set fare
+	private int totalAmount = 0;	//Total amount paid 
+	Scanner sc = new Scanner(System.in);
+	//Constructor
 	public PaymentMode(int requirement, int train_fare) 
 	{
 		this.requirement = requirement;
 		this.fare = train_fare;
 	}
-
-	Scanner sc = new Scanner(System.in);
-
+	
 	/***********************************************************************
 	 * On the basis of user's choice pay train_fare using credit card mode
-	 * 
 	 * @return toatal amount paid by user
 	 *********************************************************************/
 	public int creditCardPaymentMode()
@@ -40,7 +37,6 @@ public class PaymentMode
 
 	/**************************************************************
 	 * On the basis of user's choice pay train_fare using Wallet
-	 * 
 	 * @return toatal amount paid by user
 	 *************************************************************/
 	public int walletPaymentMode()
@@ -51,7 +47,6 @@ public class PaymentMode
 
 	/*********************************************************************
 	 * On the basis of user's choice pay train_fare using Net Banking
-	 * 
 	 * @return toatal amount paid by user
 	 *******************************************************************/
 	public int netBankingPaymentMode()

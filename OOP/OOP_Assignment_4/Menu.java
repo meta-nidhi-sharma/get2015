@@ -10,12 +10,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Menu {
-	
+/**
+ * @author Nidhi
+ * Description: This class is Menu class setting and displaying menu and asking user to choose 1 option from menu
+ */
+public class Menu 
+{
 	Scanner sc = new Scanner(System.in);
 	public static ArrayList<PassengerTrain> pTrainList = new ArrayList<PassengerTrain>();  	//Passenger trains list
 	public static ArrayList<GoodsTrain> gTrainList = new ArrayList<GoodsTrain>();				//Goods trains list
 	
+	/***********************************************************
+	 * To set menu(setting list of passenger and goods trains)
+	 ***********************************************************/
 	public void setMenu()
 	{		
 		BufferedReader br = null; 					// input BY file
@@ -23,19 +30,18 @@ public class Menu {
 		{
 			StringTokenizer stringTokenizer;		//To separete content of one train in list
 			FileInputStream fin = new FileInputStream(
-					new File("C:\\Users\\Nidhi\\workspace\\OOP_Assignment_3\\src\\TrainReservationSystem\\Train_Chart.txt"));
-			// File reader
-			DataInputStream in = new DataInputStream(fin);
-			//data reader
-			br = new BufferedReader(new InputStreamReader(in));
-			//buffer reader to read information
+					new File("C:\\Users\\Nidhi\\workspace\\OOP_Assignment_3\\src\\TrainReservationSystem\\Train_Chart.txt"));	// File reader
+			DataInputStream in = new DataInputStream(fin);			//data reader
+			br = new BufferedReader(new InputStreamReader(in));		//buffer reader to read information
 			String traindata = "";		//containing information of individual train
 			int i = 1;					//for counting tokens
+			
 			String trainType = "", trainID = "", trainName = "", from = "", to = "", duration = "", amount = "", available = "";
 			while ((traindata = br.readLine()) != null)
 			{
 				stringTokenizer = new StringTokenizer(traindata, ",");
 				i = 1;
+				
 				//organizing token by assiging them to different strings
 				while (stringTokenizer.hasMoreTokens())
 				{
@@ -89,7 +95,8 @@ public class Menu {
 				}
 			}
 
-		} catch (IOException e)
+		} 
+		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
@@ -107,14 +114,21 @@ public class Menu {
 		}
 	}
 
+	/**********************************************************
+	 * This function is used to display menu
+	 *********************************************************/
 	void displayMenu()
 	{
-		System.out.println("1. Passenger Trains List\n2. Goods Trains List\n3. Booking Passenger Train\n4. Booking Goods Train\n5. Exit");
+		System.out.println("Choose one option from the menu"+Constant.MENU);
 	}
 	
-	int chooseOption()
+	/**********************************************************
+	 * This function is used to get one option or user's choice
+	 * @return Integer option choosen by user
+	 *********************************************************/
+	public int chooseOption()
 	{
-		int optionChoose = sc.nextInt();
+		final int optionChoose = sc.nextInt();
 		return optionChoose;
 	}
 	
