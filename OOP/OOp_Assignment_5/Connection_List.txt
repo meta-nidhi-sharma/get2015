@@ -1,5 +1,0 @@
-Nidhi,Richa,Chetna,Metacube
-Richa,Nidhi
-Chetna,Neha,Nidhi,abc
-Metacube,Nidhi
-abc,Chetna

@@ -1,5 +1,0 @@
-Person,Nidhi,n@gmail.com,123,reading_book,painting/dancing
-Person,Richa,r@gmail.com,234,playing_carom,drawing
-Person,Chetna,c@gmail.com,456,gossiping,dancing
-Organization,Metacube,m@gmail.com,345,C/C++/java,80%
-Organization,abc,a@gmail.com,786,java,70%                                                                                                                             
