@@ -6,7 +6,8 @@ package DSAssignment1;
  */
 import java.util.Scanner;
 
-public class DoublyLinkedList {
+public class DoublyLinkedList
+{
 
 	public DoublyNode start;
 	private static Scanner sc;
@@ -15,14 +16,17 @@ public class DoublyLinkedList {
 	 * @param item
 	 *            value to be added to the doublylinked list
 	 */
-	void createDoublyLinkedList(int item) {
+	void createDoublyLinkedList(int item)
+	{
 		DoublyNode newNode = new DoublyNode(item, null, null);
 		DoublyNode temp;
-		if (start == null) {
+		if (start == null) 
+		{
 			start = newNode;
 		} else {
 			temp = start;
-			while (temp.getNext() != null) {
+			while (temp.getNext() != null) 
+			{
 				temp = temp.getNext();
 			}
 			temp.setNext(newNode);
@@ -36,18 +40,22 @@ public class DoublyLinkedList {
 	 * @param index
 	 *            position for insertion of e=item
 	 */
-	public void insertAtParticularPosition(int item, int index) {
+	public void insertAtParticularPosition(int item, int index)
+	{
 		DoublyNode newNode = new DoublyNode(item, null, null);
 		DoublyNode temp = start;
 		int count;
-		if (index == 0) {
+		if (index == 0) 
+		{
 			newNode.setNext(start);
 			newNode.setPrev(null);
 			start = newNode;
 		}
-		for (count = 0; count < index - 1; count++) {
+		for (count = 0; count < index - 1; count++) 
+		{
 			temp = temp.getNext();
-			if (temp == null) {
+			if (temp == null) 
+			{
 				System.out.println("Node in the list is at less than one");
 				return;
 			}
@@ -62,10 +70,12 @@ public class DoublyLinkedList {
 	/**
 	 * method to print doubly linked list
 	 */
-	void traversalDoublyLinkedList() {
+	void traversalDoublyLinkedList() 
+	{
 		DoublyNode temp = start;
 		System.out.println("The linked list is.. ");
-		while (temp != null) {
+		while (temp != null) 
+		{
 			System.out.print(temp.getValue() + "\t");
 			temp = temp.getNext();
 		}
@@ -75,10 +85,12 @@ public class DoublyLinkedList {
 	 * @param index
 	 *            position for print the value
 	 */
-	void retrievalAtIndex(int index) {
+	void retrievalAtIndex(int index)
+	{
 		DoublyNode temp = start;
 		int count;
-		for (count = 1; count <= index; count++) {
+		for (count = 1; count <= index; count++)
+		{
 			temp = temp.getNext();
 		}
 		System.out.println("The value at index is " + temp.getValue());
@@ -88,13 +100,18 @@ public class DoublyLinkedList {
 	 * @param index
 	 *            position for deletion
 	 */
-	public void deleteItemOnIndex(int index) {
+	public void deleteItemOnIndex(int index) 
+	{
 		DoublyNode temp = null, current = start;
 		int count;
-		if (index == 0) {
+		if (index == 0) 
+		{
 			start = current.getNext();
-		} else {
-			for (count = 1; count <= index; count++) {
+		} 
+		else
+		{
+			for (count = 1; count <= index; count++)
+			{
 				temp = current;
 				current = current.getNext();
 			}
@@ -108,19 +125,28 @@ public class DoublyLinkedList {
 	 * @param item
 	 *            value that to be deleted
 	 */
-	public void deleteItemOnValue(int item) {
+	public void deleteItemOnValue(int item) 
+	{
 		DoublyNode current = start;
 		DoublyNode temp = current;
-		if (start == null) {
+		if (start == null)
+		{
 			System.out.println("Empty List");
-		} else {
-			while (current != null) {
-				if (current.getValue() == item) {
-					if (temp == start) {
+		}
+		else 
+		{
+			while (current != null) 
+			{
+				if (current.getValue() == item) 
+				{
+					if (temp == start)
+					{
 						start = temp.getNext();
 						temp.setPrev(null);
 						return;
-					} else {
+					} 
+					else
+					{
 						temp.setNext(current.getNext());
 						temp.setPrev(current.getPrev());
 						return;
@@ -134,7 +160,8 @@ public class DoublyLinkedList {
 	/**
 	 * method for reversing the doubly linked list
 	 */
-	void reverse() {
+	void reverse()
+	{
 		DoublyNode tempnode1=null,tempnode2;
 		DoublyNode current = start;
 			while( current != null )
@@ -151,7 +178,8 @@ public class DoublyLinkedList {
 	/**
 	 * sort the doubly linked list
 	 */
-	void sortLinkedList() {
+	void sortLinkedList()
+	{
 		DoublyNode temp, current = start;
 		int check;
 		while (current != null) // apply simple sorting to sort the elements of
@@ -159,7 +187,8 @@ public class DoublyLinkedList {
 		{
 			temp = start;
 			while (temp.getNext() != null) {
-				if (temp.getValue() > temp.getNext().getValue()) {
+				if (temp.getValue() > temp.getNext().getValue()) 
+				{
 					check = temp.getValue();
 					temp.setValue(temp.getNext().getValue());
 					temp.getNext().setValue(check);
@@ -170,7 +199,8 @@ public class DoublyLinkedList {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String args[])
+	{
 		DoublyLinkedList doublyLinkList = new DoublyLinkedList();
 
 		int ch, item, loc;

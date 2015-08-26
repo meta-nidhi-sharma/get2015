@@ -4,18 +4,21 @@ package DSAssignment1;
  * Date: 25 august,2015
  * Description: DoublyNode containing nodes of doublyLinkedList
  */
-public class DoublyNode {
+public class DoublyNode
+{
 	private int value;
 	private DoublyNode next;
 	private DoublyNode prev;
 	//Constructor
-	public DoublyNode(){
+	public DoublyNode()
+	{
 		this.value=0;
 		this.next=null;
 		this.prev=null;
 	}
 	//constructor
-	public DoublyNode(int value,DoublyNode next,DoublyNode prev){
+	public DoublyNode(int value,DoublyNode next,DoublyNode prev)
+	{
 		this.value=value;
 		this.next=next;
 		this.prev=prev;
@@ -25,7 +28,8 @@ public class DoublyNode {
 	 * Get node value
 	 * @return value
 	 **********************/
-	public int getValue() {
+	public int getValue() 
+	{
 		return value;
 	}
 	/********************
@@ -54,7 +58,8 @@ public class DoublyNode {
 	 * Get node value
 	 * @return node previous value
 	 *******************************/
-	public DoublyNode getPrev() {
+	public DoublyNode getPrev()
+	{
 		return prev;
 	}
 	/********************

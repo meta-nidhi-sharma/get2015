@@ -8,9 +8,10 @@ import java.util.Scanner;
 
 public class MyArrayList 
 {
-	private int myArray[];
-	private int size = 0;
+	private int myArray[];		//array
+	private int size = 0;		//array size
 
+	//constructor
 	public MyArrayList() 
 	{
 		myArray = new int[10];
