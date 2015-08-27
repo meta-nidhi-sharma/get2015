@@ -1,0 +1,56 @@
+package Assignment_2;
+/**
+ * @ Nidhi
+ * Date: 26 august,2015
+ * Description: Node to create node in stack
+ */
+public class Node
+{
+	private Node next;			//To create next
+	private Object value;		//To set node value
+	//constructor creating empty node
+	Node()
+	{
+		this.next = null;
+		this.value = 0;
+	}
+	/***********************************
+	 * constructor creating node  with value
+	 * @param data
+	 * @param next
+	 ***********************************/
+	public Node(Object data, Node next)
+	{
+		this.value = data;
+		this.next = next;
+	}
+	/***********************************
+	 * To get next node 
+	 ***********************************/
+	public Node getNext() 
+	{
+		return next;
+	}
+	/***********************************
+	 * To set next node 
+	 ***********************************/
+	public void setNext(Node next) 
+	{
+		this.next = next;
+	}
+	/***********************************
+	 * To get next node value
+	 ***********************************/
+	public Object getValue()
+	{
+		return value;
+	}
+	/***********************************
+	 * To set next node 
+	 ***********************************/
+	public void setValue(Object value)
+	{
+		this.value = value;
+	}
+	
+}
