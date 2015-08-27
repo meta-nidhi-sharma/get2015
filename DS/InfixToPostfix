@@ -1,0 +1,84 @@
+package Assignment_2;
+/**
+ * @ Nidhi
+ * Date: 26 august,2015
+ * Description: converting infix expression in postfix expression
+ */
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class InfixToPostfix
+{
+	Stack stack = new Stack();		//using stack for conversion
+	
+	/*************************************
+	 * postfix conversion
+	 * @param input
+	 *************************************/
+	private void postfixExpression(String input)
+	{
+		StringTokenizer tokens = new StringTokenizer(input, ",");
+		
+		while(tokens.hasMoreTokens())
+		{
+			String token = tokens.nextToken();
+			
+			if(isOperator(token) == 1)
+			{
+				if(precedence(token) <= precedence(stack.topElement()))
+				{
+					System.out.print(stack.pop());
+				}
+				stack.push(token);
+			}
+			else
+				System.out.print(token);
+		}
+		stack.reverse();
+		stack.displayStack();
+	}
+	
+	/*****************************************************
+	 * To check precedence 
+	 * @param token
+	 * @return true or false
+	 ****************************************************/
+	private int precedence(Object token) 
+	{
+		if(token.equals("+") || token.equals("-"))
+			return 1;
+		else if(token.equals("*") || token.equals("/") || token.equals("%"))
+			return 2;
+		else if(token.equals("^"))
+			return 3;
+		else
+			return 0;
+	}
+
+	/*****************************************************
+	 * To check whether the token is operator or not 
+	 * @param token
+	 * @return true or false
+	 ****************************************************/
+	public int isOperator(String token)
+	{
+		if(token.equalsIgnoreCase("+") || token.equalsIgnoreCase("-") || token.equalsIgnoreCase("*") || token.equalsIgnoreCase("/") || token.equalsIgnoreCase("%") || token.equalsIgnoreCase("^"))
+			return 1;
+		else
+			return 0;
+	}
+	
+	/*****************************************************
+	 * Main
+	 ****************************************************/
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter infix expression with space between each element");
+		String infixExpression = sc.next();
+		InfixToPostfix conversion = new InfixToPostfix();
+		conversion.postfixExpression(infixExpression);
+		//System.out.println(conversion.precedence("+"));
+		sc.close();
+	}
+}
