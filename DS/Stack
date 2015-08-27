@@ -1,0 +1,160 @@
+package Assignment_2;
+/**
+ * @ Nidhi
+ * Date: 26 august,2015
+ * Description: Stack performing all stack related operations like: push, pop etc.
+ */
+import java.util.Scanner;
+
+public class Stack 
+{
+	private Node start;			//starting node pointing to stack
+	private int index = 0;		//to hold number of elements in stack
+	
+	/****************************
+	 * To push element in stack
+	 * @param data
+	 ***************************/
+	void  push(Object data)
+	{	
+		Node newNode = new Node(data, null);
+		Node temp = start;
+		if(index == 0)
+			start = newNode;
+		else
+		{
+			temp = start;
+			while(temp.getNext()!=null)
+			{
+				temp = temp.getNext();
+			}
+			temp.setNext(newNode);
+		}
+		index++;
+	}
+	
+	/****************************
+	 * To pop element from stack
+	 * @return popped data
+	 ***************************/
+	Object pop()
+	{
+		Node temp = start;;
+		if(index == 0)
+		{
+			//System.out.println("Stack is empty");
+			return "";
+		}
+		else
+		{
+			Node current=temp;
+			while(temp.getNext()!=null)
+			{
+				current = temp;
+				temp = temp.getNext();
+			}
+			//System.out.println(temp.getValue());
+			current.setNext(null);
+			index--;
+			return temp.getValue();
+		}
+	}
+	
+	/***************************
+	 * To display all elements 
+	 * in stack
+	 ***************************/
+	void displayStack()
+	{
+		if(index == 0)
+			System.out.println("Stack is empty");
+		else
+		{
+			Node temp = start;
+			System.out.println(temp.getValue());
+			while(temp.getNext()!=null)
+			{
+				temp = temp.getNext();
+				System.out.println(temp.getValue());
+			}
+		}
+	}
+	
+	/****************************
+	 * To return value of last 
+	 * element in stack
+	 * @return
+	 ***************************/
+	public Object topElement()
+	{
+		Node temp = start;
+		if(index == 0)
+		{
+			//System.out.println("Stack is empty");
+			return 0;
+		}
+		else
+		{
+			while(temp.getNext()!=null)
+				temp= temp.getNext();
+			return temp.getValue();
+		}
+	}
+	
+	/**********************
+	 * reversing stack
+	 ********************/
+	void reverse() 
+	{
+		Node prev = null;
+		Node temp = start;
+		Node next = temp.getNext();
+		while (temp != null) 
+		{
+			if (next == null)
+				break;
+			temp.setNext(prev);
+			prev = temp;
+			temp = next;
+			next = next.getNext();
+		}
+		temp.setNext(prev);
+		start = temp;
+	}
+	
+	//Main function
+	public static void main(String args[])
+	{
+		Stack stack = new Stack();
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		do
+		{
+			System.out.println("1. push\n2. pop\n3. Top Value in Stack\n4. reverse stack\n5. Display\n6. Exit");
+			int choice = sc.nextInt();
+			switch(choice)
+			{
+				case 1:
+					System.out.print("enter new data");
+					Object data1 = sc.nextInt();
+					stack.push(data1);
+					break;
+				case 2:
+					Object poppedValue = stack.pop();
+					System.out.println("Popped Value : "+poppedValue);
+					break;
+				case 3:
+					Object value = stack.topElement();
+					System.out.println("Top Value in Stack : "+value);
+				case 4:
+					stack.reverse();
+					break;
+				case 5:
+					stack.displayStack();
+					break;
+				case 6:
+					break;
+			}
+		}while(true);
+	}
+}
