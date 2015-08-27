@@ -1,0 +1,92 @@
+package Assignment_2;
+/**
+ * @ Nidhi
+ * Date: 26 august,2015
+ * Description: CollegeCounsellingProcess to allot college for students in queue
+ */
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+public class CollegeCounsellingProcess
+{
+	/***********************************
+	 * To allot college to students 
+	 * on the basis of their choice
+	 * @param student
+	 * @param cl
+	 **********************************/
+	void allotCollege(Object student, CollegeList cl)
+	{
+		Scanner sc = new Scanner(System.in);
+		int count = 0; 				//To display collegeList working as index
+		System.out.println("Enter choice of college from college List given below with available seats:");
+		while(count < cl.college_Name.length)
+		{
+			System.out.println(cl.college_Name[count]+"\t"+cl.available_Seat[count]);
+			count++;
+		}
+		try
+		{
+			System.out.println("Enter choice");
+			int choice = sc.nextInt(); 			//asking for student choice
+			if(choice>0 && choice <=cl.college_Name.length)
+			{
+				if(cl.available_Seat[choice-1]>0)
+				{
+					switch(choice)
+					{
+					case 1:
+						System.out.println(student+" Congratulations\nCollege Alloted -> "+cl.college_Name[choice-1]);
+						break;
+					case 2:
+						System.out.println(student+" Congratulations\nCollege Alloted -> "+cl.college_Name[choice-1]);
+						break;
+					case 3:
+						System.out.println(student+" Congratulations\nCollege Alloted -> "+cl.college_Name[choice-1]);
+						break;
+					case 4:
+						System.out.println(student+" Congratulations\nCollege Alloted -> "+cl.college_Name[choice-1]);
+						break;
+					case 5:
+						System.out.println(student+" Congratulations\nCollege Alloted -> "+cl.college_Name[choice-1]);
+						break;
+					}
+					(cl.available_Seat[choice-1])--;
+				}
+				else
+					System.out.println("Sorry, Seat not available in college\nWait for second counselling");
+			}
+			else
+				System.out.println("Sorry college is not available");
+		}
+		catch (NoSuchElementException e)
+		{
+			e.printStackTrace();
+		}
+		sc.close();
+	}
+	
+	//Main
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		String[] college= {"VIT","GIT","SKIT","NIT","MNIT"};
+		int[] seat = {2,1,0,3,1};
+		CollegeList cl = new CollegeList(college , seat);		//calling constructor
+		Object[] array = new Object[20];
+		QueueUsingArray queue = new QueueUsingArray(array);
+		//adding students in queue
+		queue.enqueue("Nidhi");
+		queue.enqueue("Richa");
+		queue.enqueue("Suman");
+		queue.enqueue("Neha");
+		queue.enqueue("Chetna");
+		
+		//alloting colleges to each student in queue
+		CollegeCounsellingProcess ca = new CollegeCounsellingProcess();			//creating object
+		for(int count = 0; count<array.length; count ++)
+			ca.allotCollege(array[0],cl);	
+		sc.close();
+	}
+
+}
