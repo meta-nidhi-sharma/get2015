@@ -1,0 +1,18 @@
+package Assignment_2;
+/**
+ * @ Nidhi
+ * Date: 26 august,2015
+ * Description: CollegeList containing college name and available seats
+ */
+public class CollegeList 
+{
+	String[] college_Name = {};		//contains name of all available colleges
+	int[] available_Seat = {0};		//contains seats available in corresponding college
+	
+	//Constructor creating college list
+	public CollegeList(String[] collegeName, int[] availableSeat)
+	{
+		this.college_Name = collegeName;
+		this.available_Seat = availableSeat;
+	}
+}
