@@ -1,0 +1,69 @@
+package Assignment_3;
+/**
+ * @author Nidhi Sharma
+ * Description : Node class defining node structure like : node value, left and right node
+ */
+public class Node
+{
+	int nodeValue;		//holds node value
+	Node left;			//holds left node
+	Node right;			//holds right node
+	//Constructor
+	public Node()
+	{
+		left = null;
+		right = null;
+	}
+	//constructor setting node value
+	public Node(int nodeValue)
+	{
+		this.nodeValue = nodeValue;
+		left = null;
+		right = null;
+	}
+    /*********************************
+     * To get node value
+     * @return node value
+    **********************************/
+	public int getNodeValue()
+	{
+		return nodeValue;
+	}
+	/*********************************
+     * To get node value
+    **********************************/
+	public void setNodeValue(int nodeValue) 
+	{
+		this.nodeValue = nodeValue;
+	}
+	/*********************************
+     * To get left node
+     * @return left node
+    **********************************/
+	public Node getLeft()
+	{
+		return left;
+	}
+	/*********************************
+     * To set left node
+    **********************************/
+	public void setLeft(Node left)
+	{
+		this.left = left;
+	}
+	/*********************************
+     * To get right node
+     * @return right node
+    **********************************/
+	public Node getRight() 
+	{
+		return right;
+	}
+	/*********************************
+     * To set right node
+     ********************************/
+	public void setRight(Node right)
+	{
+		this.right = right;
+	}
+}
