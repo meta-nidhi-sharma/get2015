@@ -1,0 +1,186 @@
+package Assignment_3;
+/**
+ * @author Nidhi Sharma
+ * Description : Binary Tree class creating tree in binary form 
+ * also performing diffrent types of traversing like inorder,preorder and postorder
+ * also cheking two trees for mirror image symmetry
+ */
+public class BinaryTree 
+{
+	Node root;		//root node
+	Node binaryRoot;		//holds root node of binary tree
+	int count=0;			
+	int preOrder[]=new int [10];			//holding data in preorder
+	int size=0;
+	int postOrder[]=new int[10];			//holding data in postorder
+	
+	/**********************************
+	* inserting data
+ 	* @param data
+ 	***********************************/
+	public void insert(int data)
+	{
+		root = insert(root, data);
+	}
+
+	/**************************************
+	 * insert data in node
+	 * @param node
+	 * @param data
+	 * @return
+	 **************************************/
+	private Node insert(Node node, int data)
+	{
+	if (node == null) 
+		{
+			node = new Node(data);
+			System.out.println("data placed");
+		} 
+		else
+		{
+			if (data <= node.getNodeValue())
+			{
+				System.out.println("left");
+				node.left = insert(node.left, data);
+			} 
+			else
+			{
+				System.out.println("right");
+				node.right = insert(node.right, data);
+			}
+		}
+		return node;
+	}
+
+	/**************************
+	 * Inorder traversing
+	 **************************/
+	public void inorderTraversal()
+	{
+		inorderTraversal(root);
+	}
+
+	/**********************************
+	 *node by node inorder traversing 
+	 * @param node
+	 *********************************/
+	private void inorderTraversal(Node node) 
+	{
+		if (node == null)
+			return;
+		inorderTraversal(node.left);
+		System.out.println(node.nodeValue);
+		inorderTraversal(node.right);
+	}
+
+	/*************************
+	 * preorder traversing
+	 *************************/
+	public void preorderTravarsal()
+	
+	{
+		preorderTravarsal(root);
+	}
+	
+	/**********************************
+	 *node by node preorder traversing 
+	 * @param node
+	 *********************************/
+	private void preorderTravarsal(Node node) 
+	{
+		if (node == null)
+			return;
+		System.out.println(node.nodeValue);
+		preOrder[count++]=node.nodeValue;
+		size++;
+		preorderTravarsal(node.left);
+		preorderTravarsal(node.right);
+	}
+
+	/***********************
+	 * postorder traversing
+	 ***********************/
+	public void postorderTravarsal()
+	{
+		postorderTravarsal(root);
+	}
+
+	/**********************************
+	 *node by node postorder traversing 
+	 * @param node
+	 *********************************/
+	private void postorderTravarsal(Node node)
+	{
+		if (node == null) 
+			return;
+		postorderTravarsal(node.left);
+		postorderTravarsal(node.right);
+		System.out.println(node.nodeValue);
+		postOrder[count++]=node.nodeValue;
+	}
+
+	/**********************************
+	 * inserting data to make mirror image
+	 * @param data
+	 *********************************/
+	public void insertImage(int data)
+	{
+		binaryRoot = insertImage(binaryRoot, data);
+	}
+
+	private Node insertImage(Node node, int data)
+	{
+		if (node == null)
+		{
+			node = new Node(data);
+			System.out.println("Image data placed");
+		}
+		else 
+		{
+			if (data <= node.getNodeValue())
+			{
+				System.out.println("Image right");
+				node.right = insertImage(node.right, data);
+			} 
+			else
+			{
+				System.out.println("Image left");
+				node.left = insertImage(node.left, data);
+			}
+		}
+		return node;
+	}
+	
+	/*****************************************
+	 * cheking for mirror image symmetry
+	 * @return
+	 *****************************************/
+	public boolean checkMirrorImageCondition() 
+	{
+		return checkMirrorImageCondition(root,binaryRoot);
+	}
+
+	/*****************************************
+	 * cheking for mirror image symmetry node by node
+	 * @return true or false
+	 *****************************************/
+	private boolean checkMirrorImageCondition(Node node, Node nodeImage) 
+	{
+		
+	    int flag=0;		//to hold result
+		int counter=size-1;			//to count nodes
+		for (int index = 0; index <size; index++)
+		{
+			if(preOrder[index]==postOrder[counter])
+				counter--;
+			else
+			{
+				flag=1;
+				break;
+			}
+		}
+		if(flag==0)
+			return true;
+		return false;	
+	}	
+}
