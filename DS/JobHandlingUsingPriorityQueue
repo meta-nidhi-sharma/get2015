@@ -1,0 +1,57 @@
+package Assignment_4;
+
+import java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+
+public class JobHandlingUsingPriorityQueue
+{	 
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(10, Collections.reverseOrder());
+		JobHandlingUsingPriorityQueue pq = new JobHandlingUsingPriorityQueue();
+		System.out.println("Enter No. of jobs");
+		int numberOfJobs = sc.nextInt();
+		System.out.println("Priorities of jobs are: \n4. Chair Person(Highest Priority)\n3. Professor\n2. Graduates\n1. Under Graduates(Lowest Priority)");
+		int userPriority;
+		for(int count = 0; count <numberOfJobs ; count++)
+		{
+			System.out.println("Enter your priority as per your designation");
+			do
+			{
+				userPriority = sc.nextInt();
+			}
+			while(userPriority <= 0 || userPriority >=5);
+			queue.add(userPriority);
+		}
+		do
+		{
+			System.out.println("Enter your choice: ");
+			System.out.println("1. Add one more job");
+			System.out.println("2. Show the current job to be serviced");
+			System.out.println("3. Service the current job");
+			System.out.println("4. Exit");
+			int choice = sc.nextInt();
+			switch(choice)
+			{
+				case 1: 
+					do{
+						userPriority = sc.nextInt();
+					}while(userPriority <= 0 && userPriority >=5);
+					queue.add(userPriority);
+					break;
+				case 2:
+					System.out.println("Current job to be serviced : "+ queue.peek());
+					break;
+				case 3:
+					System.out.println("Current job under service : "+ queue.poll());
+					break;
+				case 4:
+					System.exit(0);
+					break;
+			}
+		}while(true);
+	}		
+}
