@@ -17,7 +17,7 @@ public class MainClass
 		while (true)
 		{
 			System.out.println("Menu\n1. Create Binary Tree"
-					+ "\n2. Create  binary tree"
+					+ "\n2. Create  another binary tree"
 					+ "\n3. Inorder Traversal" + "\n4. Preorder Traversal"
 					+ "\n5. Post order Traversal"
 					+ "\n6. Check Mirror image or not" + "\n7. Exit");
