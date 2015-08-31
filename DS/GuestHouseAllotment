@@ -1,0 +1,114 @@
+package Assignment_4;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+
+public class GuestHouseAllotment 
+{
+	static HashMap<String, Integer> guestHouseRoomMap = new HashMap<String, Integer>();
+	static int index = 0;
+	static int numberOfRooms;
+	static int array[] = new int[20];
+	@SuppressWarnings("rawtypes")
+	public static void main(String args[])
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of rooms in guestHouse");
+		
+		int choice;
+		do
+		{
+			System.out.println("Enter number (prime number) of rooms in guestHouse");
+			numberOfRooms = sc.nextInt();
+		}while(!checkPrimeNumber(numberOfRooms));
+		do
+		{
+		System.out.println("Want to book room!\n\nEnter your Name");
+		String nameOfCustomer = sc.next();
+		System.out.println("Enter your age");
+		int age = sc.nextInt();
+		int roomAlloted = GuestHouseAllotment.roomAllotment(age,numberOfRooms);
+		if(roomAlloted >0 && roomAlloted<=numberOfRooms)
+		{
+			guestHouseRoomMap.put(nameOfCustomer, roomAlloted);
+			Set setOfKeys = guestHouseRoomMap.keySet();
+			Iterator iterator = setOfKeys.iterator();
+			System.out.println("Name Of Customers: | Room Number: ");
+			System.out.println("-------------------|--------------- ");
+			while (iterator.hasNext())
+			{
+				String key = (String) iterator.next();
+				Integer value = (Integer)guestHouseRoomMap.get(key);
+				System.out.println(key+"\t\t\t\t"+value+"\n"); 
+			}
+		}
+		else
+			System.out.println("No rooms available");
+		System.out.println("Do you want to book more rooms? If Yes, then press 1 else press anything else");
+		choice = sc.nextInt();
+		if(choice != 1)
+			break;
+		}while(choice == 1);
+		sc.close();
+	}
+	
+	public static boolean checkPrimeNumber(int number)
+	{
+		for(int count = 2 ; count < number/2 ; count++)
+		{
+			if(number%count == 0)
+				return false;
+		}
+		return true;
+	}
+	
+	public static int roomAllotment(int age, int totalRooms)
+	{
+		int roomNumber;
+		int flag=-1;
+		roomNumber = age%totalRooms;
+		if(roomNumber==0)
+			roomNumber++;
+		while(roomNumber <= totalRooms)
+		{
+			if(index > 0)
+			{
+				for(int count=0; count<=index; count++)
+				{
+					if(roomNumber == array[count])
+					{
+						flag=1;
+						roomNumber++;
+						count=0;
+					}
+					else 
+						flag = 0;
+				}
+				if(flag ==0)
+					break;
+			}
+			else
+			{
+				array[index] = roomNumber;
+				index++;
+				return roomNumber;
+			}
+			
+		}
+		if(flag==0)
+		{
+			array[index] = roomNumber;
+			index++;
+			return roomNumber;
+		}
+		else
+		{
+			System.out.println("No rooms Available");
+			return 0;
+		}
+	}
+
+}
