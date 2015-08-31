@@ -1,6 +1,7 @@
 package Assignment_3;
 /**
  * @author Nidhi Sharma
+ * Date: 26 august,2015
  * Description : Binary Tree class creating tree in binary form 
  * also performing diffrent types of traversing like inorder,preorder and postorder
  * also cheking two trees for mirror image symmetry
