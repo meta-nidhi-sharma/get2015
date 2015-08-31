@@ -1,21 +1,24 @@
-package Assignment_4;
 
+package Assignment_4;
+/**
+ * @author Nidhi Sharma
+ * Date: 31 august,2015
+ * Description : handling jobs of a printer using priority queue. Highest priority work will be 1st serviced.
+ */
 import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-
-
+//Class
 public class JobHandlingUsingPriorityQueue
 {	 
 	public static void main(String args[])
 	{
-		Scanner sc = new Scanner(System.in);
-		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(10, Collections.reverseOrder());
-		JobHandlingUsingPriorityQueue pq = new JobHandlingUsingPriorityQueue();
+		Scanner sc = new Scanner(System.in);		//Scanner class reference
+		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(10, Collections.reverseOrder());	//Priority queue
 		System.out.println("Enter No. of jobs");
-		int numberOfJobs = sc.nextInt();
+		int numberOfJobs = sc.nextInt();				//holds total number of jobs to perform
 		System.out.println("Priorities of jobs are: \n4. Chair Person(Highest Priority)\n3. Professor\n2. Graduates\n1. Under Graduates(Lowest Priority)");
-		int userPriority;
+		int userPriority;				//holds user input priority
 		for(int count = 0; count <numberOfJobs ; count++)
 		{
 			System.out.println("Enter your priority as per your designation");
@@ -24,7 +27,7 @@ public class JobHandlingUsingPriorityQueue
 				userPriority = sc.nextInt();
 			}
 			while(userPriority <= 0 || userPriority >=5);
-			queue.add(userPriority);
+			queue.add(userPriority);			//add priority in queue
 		}
 		do
 		{
@@ -36,22 +39,30 @@ public class JobHandlingUsingPriorityQueue
 			int choice = sc.nextInt();
 			switch(choice)
 			{
+				//adding more jobs in queue
 				case 1: 
-					do{
+					do
+					{
 						userPriority = sc.nextInt();
-					}while(userPriority <= 0 && userPriority >=5);
+					}
+					while(userPriority <= 0 && userPriority >=5);
 					queue.add(userPriority);
 					break;
+				//display current job to be serviced
 				case 2:
 					System.out.println("Current job to be serviced : "+ queue.peek());
 					break;
+				//display job under service
 				case 3:
 					System.out.println("Current job under service : "+ queue.poll());
 					break;
+				//To exit
 				case 4:
+					sc.close();
 					System.exit(0);
 					break;
 			}
-		}while(true);
-	}		
+		}
+		while(true);
+	}	
 }
