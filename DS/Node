@@ -1,6 +1,7 @@
 package Assignment_3;
 /**
  * @author Nidhi Sharma
+ * Date: 26 august,2015
  * Description : Node class defining node structure like : node value, left and right node
  */
 public class Node
