@@ -1,50 +1,37 @@
 package Assignment_5;
-
+/**
+* @author Nidhi Sharma
+* Date: 31 august,2015
+* Description:  A program for concordance of characters occurring in a string (i.e which characters occur where in a string).
+*  Read the string from the command line.
+*/
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-
+//Class
 public class ConcordingCharacter
 {
-	static HashMap<Character, ArrayList<Integer>> concordanceMap = new HashMap<Character, ArrayList<Integer>>();
+	private static int index=0;		//holding while loop condition
+	private static HashMap<Character, ArrayList<Integer>> concordanceMap = new HashMap<Character, ArrayList<Integer>>();	//HashMap
 	public static void main(String args[])
 	{
-		int i=0;
-		String string = "";
+		String string = "";		//holding input string
+		//copying command line argument into string
 		for(String str : args)
 			string += str;
 		System.out.println(string);
-		while(i<string.length())
-		{
-			int flag = -1;
-			ArrayList<Integer> indexArray = new ArrayList<Integer>();
-			for(int count =0; count <string.length() ; count++ )
-			{
-				if((string.charAt(i) == string.charAt(count)) && (count>=i))
-				{
-					indexArray.add(count);
-					flag = 1;
-				}
-				else if((string.charAt(i) == string.charAt(count)) && (count<i))
-				{
-					flag=0;
-					break;
-				}
-			}
-			if(flag != 0)
-			{
-				concordanceMap.put(string.charAt(i),indexArray);
-			}
-			i++;
-		}
-		
-		Set setOfKeys = concordanceMap.keySet();
+		//storing map in another hashmap
+		HashMap<Character, ArrayList<Integer>> concordedMap = ConcordingCharacter.concordCharacters(string);
+		//display map
+		@SuppressWarnings("rawtypes")
+		Set setOfKeys = concordedMap.keySet();
+		@SuppressWarnings("rawtypes")
 		Iterator iterator = setOfKeys.iterator();
 		while (iterator.hasNext())
 		{
 			Character key = (Character) iterator.next();
-			ArrayList<Integer> valueList = (ArrayList<Integer>)concordanceMap.get(key);
+			ArrayList<Integer> valueList = (ArrayList<Integer>)concordedMap.get(key);
 			System.out.print(key+"={");
 			java.util.Iterator<Integer> par1 = valueList.iterator();
 			while (par1.hasNext()) //Loop to check whether there is more data if yes then display
@@ -55,5 +42,42 @@ public class ConcordingCharacter
 		System.out.print("}\t");
 		}
 	}
+	
+	/***************************************
+	 * concording characters and resulting 
+	 * in map contains characters as key
+	 * and their positions as value
+	 * @param input string
+	 * @return hashmap
+	 ***************************************/
+	private static HashMap<Character, ArrayList<Integer>> concordCharacters(String input)
+	{
+		while(index<input.length())
+		{
+			int flag = -1; 		//to check for input map
+			ArrayList<Integer> indexArray = new ArrayList<Integer>();		//holds position of characters
+			for(int count =0; count <input.length() ; count++ )
+			{
+				if(input.charAt(index) == input.charAt(count))
+				{
+					if(count>=index)
+					{
+						indexArray.add(count);
+						flag = 1;
+					}
+					else 
+					{
+						flag=0;
+						break;
+					}
+				}
+			}
+			if(flag != 0)
+			{
+				concordanceMap.put(input.charAt(index),indexArray);
+			}
+			index++;
+		}
+		return concordanceMap;
+	}
 }
-
