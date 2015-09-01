@@ -1,0 +1,94 @@
+package Assignment_2;
+
+import java.util.Scanner;
+
+public class QueueUsingArray {
+
+	int index = 0;
+	Object[] array;
+	
+	public QueueUsingArray(Object[] array)
+	{
+		this.array = array;
+	}
+	
+	void  enqueue(Object data)
+	{	
+		array[index] = data;
+		index++;
+	}
+	
+	Object dequeue()
+	{
+		if(index>0)
+		{
+			Object released= array[0];
+			for(int count=0; count < index-1; count++)
+				array[count] = array[count+1];
+			index--;
+			return released;
+		}
+		else
+		{
+			System.out.println("Queue Empty");
+			return null;
+		}
+	}
+	
+	void makeEmpty( )
+	{
+		index = 0;
+	}
+	
+	Object getFront( )
+	{
+		if(index>0)
+			return array[0];
+		else
+		{
+			System.out.println("Queue Empty");
+			return null;
+		}
+	}
+	
+	void displayQueue()
+	{
+		for(int count=0; count<index; count++)
+			System.out.print(array[count]+"->");
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Object[] array = new Object[20];
+		QueueUsingArray queue = new QueueUsingArray(array);
+		while (true) 
+		{
+			System.out.println("1. To Enqueue\n2. To Dequeue\n3. To Empty Queue\n4. To Get Front\n5. To Display Queue\n6. Exit");
+			int choice = sc.nextInt();
+			switch(choice)
+			{
+				case 1: 
+					System.out.println("Enter item");
+					Object item = sc.nextInt();
+					queue.enqueue(item);
+					break;
+				case 2:
+					Object obj = queue.dequeue();
+					System.out.println(obj);
+					break;
+				case 3:
+					queue.makeEmpty();
+					break;
+				case 4:
+					Object obj1 = queue.getFront();
+					System.out.println(obj1);
+					break;
+				case 5:
+					queue.displayQueue();
+					break;
+			}
+		}
+		
+	}
+}
