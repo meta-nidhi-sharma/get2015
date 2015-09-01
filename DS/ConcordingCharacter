@@ -1,0 +1,59 @@
+package Assignment_5;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class ConcordingCharacter
+{
+	static HashMap<Character, ArrayList<Integer>> concordanceMap = new HashMap<Character, ArrayList<Integer>>();
+	public static void main(String args[])
+	{
+		int i=0;
+		String string = "";
+		for(String str : args)
+			string += str;
+		System.out.println(string);
+		while(i<string.length())
+		{
+			int flag = -1;
+			ArrayList<Integer> indexArray = new ArrayList<Integer>();
+			for(int count =0; count <string.length() ; count++ )
+			{
+				if((string.charAt(i) == string.charAt(count)) && (count>=i))
+				{
+					indexArray.add(count);
+					flag = 1;
+				}
+				else if((string.charAt(i) == string.charAt(count)) && (count<i))
+				{
+					flag=0;
+					break;
+				}
+			}
+			if(flag != 0)
+			{
+				concordanceMap.put(string.charAt(i),indexArray);
+			}
+			i++;
+		}
+		
+		Set setOfKeys = concordanceMap.keySet();
+		Iterator iterator = setOfKeys.iterator();
+		while (iterator.hasNext())
+		{
+			Character key = (Character) iterator.next();
+			ArrayList<Integer> valueList = (ArrayList<Integer>)concordanceMap.get(key);
+			System.out.print(key+"={");
+			java.util.Iterator<Integer> par1 = valueList.iterator();
+			while (par1.hasNext()) //Loop to check whether there is more data if yes then display
+			{
+				Integer in = par1.next();
+				System.out.print(in+" ");
+			}
+		System.out.print("}\t");
+		}
+	}
+}
+
