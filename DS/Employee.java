@@ -1,7 +1,7 @@
 package EmployeesCollection;
 /**
  * @ author Nidhi Sharma
- * Date: 31 gugust,2015
+ * Date: 2 september,2015
  * Description: This class contains employee which sets and gets employee details
  */
 	@SuppressWarnings("rawtypes")
