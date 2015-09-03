@@ -1,7 +1,7 @@
 package EmployeesCollection;
 /**
 * @ author Nidhi Sharma
-* Date: 31 august,2015
+* Date:  2 september,2015
 * Description: This class is comparing ans sorting employees based on their Name
 */
 import java.util.Comparator;
