@@ -1,7 +1,7 @@
 package EmployeesCollection;
 /**
  * @ author Nidhi Sharma
- * Date: 31 gugust,2015
+ * Date: 2 september,2015
  * Description: This class contains a collection that is avoiding duplicate employees to add in collection on the base of their IDs
  */
 import java.util.ArrayList;
