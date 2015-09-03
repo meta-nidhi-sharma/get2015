@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class CollectionAvoidingDuplicates {
-
+public class CollectionAvoidingDuplicates
+{
 	private static ArrayList<Employee> employeeList =  new ArrayList<Employee>();	//holding employees list
 	//Main
 	public static void main(String args[])
@@ -27,7 +27,6 @@ public class CollectionAvoidingDuplicates {
 			System.out.println("2. To Display employeeList");
 			System.out.println("3. To Exit");
 			int choice = sc.nextInt();			//holding user's choice of operation
-			
 			switch(choice)
 			{
 			//To add new employee
@@ -90,6 +89,5 @@ public class CollectionAvoidingDuplicates {
 		address = sc.next();
 		Employee emp = new Employee(id , name, address);		//setting employee information
 		return emp;						//return	employee details
-	}
-		
+	}		
 }
