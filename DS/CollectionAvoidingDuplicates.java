@@ -37,7 +37,6 @@ public class CollectionAvoidingDuplicates
 					while(it.hasNext())
 					{
 						Employee ee = it.next();
-						System.out.println(emp.employee_ID +"\t"+ ee.employee_ID);
 						if(emp.employee_ID == ee.employee_ID)
 						{
 							flag = 1;
