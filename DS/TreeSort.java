@@ -9,10 +9,10 @@ import java.util.Scanner;
  */
 public class TreeSort 
 {
-	private static BinaryTreeNode root;			//holding root
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);		//Scanner Class
+		BinaryTreeNode root = null;			//holding root
 		do
 		{
 			System.out.println("Enter your choice of operation");
@@ -26,13 +26,14 @@ public class TreeSort
 			//To add student
 			case 1: 
 				System.out.print("Enter a value : ");
-				int dataOfTree = sc.nextInt();
+				Integer dataOfTree = sc.nextInt();
 				root = insert(root, dataOfTree);
+				System.out.println("data placed "+root.nodeValue);
 				break;
 			//To display students
 			case 2:
 				String sortedList = treeSorting(root);
-				System.out.print(sortedList);
+				System.out.println("Sorted IDS in String are : "+sortedList);
 				break;
 			//To Exit
 			case 3:
@@ -52,28 +53,17 @@ public class TreeSort
 	 * @param data
 	 * @return
 	 ************************/
-	private static BinaryTreeNode insert(BinaryTreeNode node, int data) 
+	public static BinaryTreeNode insert(BinaryTreeNode node, Integer data) 
 	{
 		
 		if (node == null)
-		{
-			node = new BinaryTreeNode(data);
-			System.out.println("root "+node.getNodeValue());
-			System.out.println("data placed");
-		} 
+			node = new BinaryTreeNode(data); 
 		else 
 		{
-			System.out.println("root "+node.getNodeValue());
 			if (data <= node.getNodeValue()) 
-			{
-				System.out.println("left");
 				node.left = insert(node.left, data);
-			} 
 			else 
-			{
-				System.out.println("right");
 				node.right = insert(node.right, data);
-			}
 		}
 		return node;
 	}
@@ -83,16 +73,17 @@ public class TreeSort
 	 * @return String containinng sorted 
 	 * list of elements
 	 *********************************/
-	private static String treeSorting(BinaryTreeNode node) 
+	static String sortedString = "";			//To hold sorted ids in string
+	public static String treeSorting(BinaryTreeNode node) 
 	{
-		String sortedString = "";
-		if (node != null) 
+		if(node != null)
 		{
 			treeSorting(node.left);
-			System.out.println(node.nodeValue);
-			sortedString+=node.nodeValue;
+			String s = Integer.toString(node.nodeValue);
+			sortedString = sortedString.concat(" "+s);
 			treeSorting(node.right);
 		}
 		return sortedString;
+	
 	}
 }
