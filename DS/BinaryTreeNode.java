@@ -6,7 +6,7 @@ package TreeSort;
 */
 public class BinaryTreeNode
 {
-	int nodeValue;		//holds node value
+	Integer nodeValue;		//holds node value
 	BinaryTreeNode left;		//holding node in left
 	BinaryTreeNode right;		//holding right node
 	//Constructor
@@ -16,7 +16,7 @@ public class BinaryTreeNode
 		right = null;
 	}
 	//Constructor setting node value
-	public BinaryTreeNode(int nodeValue) 
+	public BinaryTreeNode(Integer nodeValue) 
 	{
 		this.nodeValue = nodeValue;
 		left = null;
@@ -26,14 +26,14 @@ public class BinaryTreeNode
 	 * To get Node value
 	 * @return node value
 	 **********************/
-	public int getNodeValue() 
+	public Integer getNodeValue() 
 	{
 		return nodeValue;
 	}
 	/**********************
 	 * To set Node value
 	 **********************/
-	public void setNodeValue(int nodeValue)
+	public void setNodeValue(Integer nodeValue)
 	{
 		this.nodeValue = nodeValue;
 	}
