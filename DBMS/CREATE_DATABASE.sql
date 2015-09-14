@@ -1,8 +1,9 @@
 /*
 *@author Nidhi Sharma
-*Date: 8 september,2015
+*Date: 13 september,2015
 * Creating database by creating different tables
 */
+DROP DATABASE library;
 CREATE DATABASE library;                    /*Creating Database*/
 USE library;                                                /*Enter into library*/
 
@@ -15,7 +16,7 @@ USE library;                                                /*Enter into library
 		member_name VARCHAR(50),
 		addressline1 VARCHAR(20),
 		addressline2 VARCHAR(20),
-		category CHAR(1) CHECK (category IN ('M', 'F')),
+		category CHAR(1) CHECK (category IN ('S', 'F','O')),
 		PRIMARY KEY(member_id)
 	);
 	DESCRIBE members;                   /* To show  table*/
@@ -83,7 +84,7 @@ USE library;                                                /*Enter into library
 		member_id INTEGER,
 		CONSTRAINT bookIssue_Fkey1 FOREIGN KEY(member_id) REFERENCES members(member_id) ON DELETE CASCADE ON UPDATE CASCADE,
 		due_dt DATE,
-		PRIMARY KEY(issue_date,accession_no,member_id)
+		PRIMARY KEY(issue_date,accession_no)
 	);
 	DESCRIBE book_issue;                     /* To show  table*/
 
@@ -99,7 +100,7 @@ USE library;                                                /*Enter into library
 		CONSTRAINT bookReturn_Fkey2 FOREIGN KEY(member_id) REFERENCES members(member_id) ON DELETE CASCADE ON UPDATE CASCADE ,
 		issue_date TIMESTAMP,
 		FOREIGN KEY(issue_date) REFERENCES book_issue(issue_date) ON DELETE CASCADE ON UPDATE CASCADE ,
-		PRIMARY KEY(return_dt,accession_no,member_id)
+		PRIMARY KEY(return_dt,accession_no)
 	);
 	DESCRIBE book_return;                    /* To show  table*/
 
