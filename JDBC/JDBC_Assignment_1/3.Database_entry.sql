@@ -91,7 +91,7 @@ INSERT INTO book_issue (issue_date,accession_no, member_id,due_dt) VALUES ('2015
 INSERT INTO book_issue (issue_date,accession_no, member_id,due_dt) VALUES ('2015-09-10', 0935482, 102,'2015-09-25');
 INSERT INTO book_issue (accession_no, member_id) VALUES (1034835, 101);
 
-SELECT* FROM book_issue;
+
 /*Inserting data into book_return table*/
 INSERT INTO book_return VALUES 
 ('2012-01-13', 7874365, 110,'2012-01-12'),
