@@ -1,7 +1,7 @@
 package CaseStudy1;
 
 /**
- * @author Akshat
+ * @author Nidhi Sharma
  *
  */
 public class Bike extends Vehicle {
