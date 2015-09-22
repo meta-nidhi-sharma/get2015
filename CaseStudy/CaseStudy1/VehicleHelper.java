@@ -1,23 +1,27 @@
 package CaseStudy1;
 
+
 /**
- * @author Akshat
+ * @author Nidhi
  *
  */
-public class VehicleHelper {
+public class VehicleHelper
+{
 	private String vehicleType;
 
 	/**
 	 * @return
 	 */
-	public String getVehicleType() {
+	public String getVehicleType() 
+	{
 		return vehicleType;
 	}
 
 	/**
 	 * @param vehicleType
 	 */
-	public void setVehicleType(String vehicleType) {
+	public void setVehicleType(String vehicleType)
+	{
 		this.vehicleType = vehicleType;
 	}
 
@@ -27,37 +31,43 @@ public class VehicleHelper {
 	 * @param make
 	 * @return vehicle type refrence
 	 */
-	public static Vehicle createVehicle(VehicleTypeEnum vehicleType, String model,
-			String manufacturing_date) {
+	public static Vehicle createVehicle(VehicleType vehicleType, String model,
+			int make)
+	{
 		String s = String.valueOf(vehicleType);
-		if (s.equalsIgnoreCase("Car")) {
-			return createCar(model, manufacturing_date);
-		} else {
-			return createBike(model, manufacturing_date);
+		if (s.equalsIgnoreCase("Car"))
+		{
+			return createCar(model, make);
 		} 
+		else
+		{
+			return createBike(model, make);
+		}
 	}
 
 	/**
 	 * @param model
 	 * @param make
-	 * @return car type
+	 * @return bike type
 	 */
-	static Vehicle createCar(String model, String manufacturing_date) {
-		Car car = new Car();
-		car.setModel(model);
-		car.setManufacturing_date(manufacturing_date);
-		return car;
+	static Vehicle createBike(String model, int make)
+	{
+		Bike bike = new Bike();
+		bike.setModel(model);
+		bike.setMake(make);
+		return bike;
 	}
-	
+
 	/**
 	 * @param model
 	 * @param make
-	 * @return bike type
+	 * @return car type 
 	 */
-	static Vehicle createBike(String model, String manufacturing_date) {
-		Bike bike = new Bike();
-		bike.setModel(model);
-		bike.setManufacturing_date(manufacturing_date);
-		return bike;
+	static Vehicle createCar(String model,int make) 
+	{
+		Car car = new Car();
+		car.setModel(model);
+		car.setMake(make);
+		return car;
 	}
 }

@@ -1,7 +1,9 @@
 package CaseStudy1;
 
-public enum VehicleTypeEnum {
-
+public enum VehicleType 
+{
 	Bike,
 	Car;
 }
+
+	

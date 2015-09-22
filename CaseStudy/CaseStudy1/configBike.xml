@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configBike>
+
+	<row type = "Bike">
+		<self_start>True</self_start>
+		<helmet_price>500</helmet_price>
+		<vehicle_no>102</vehicle_no>
+		<make>2001</make>
+		<model>Honda</model>
+		<engineIn_CC>110</engineIn_CC>
+		<fuel_capacity>20</fuel_capacity>
+		<milage>30</milage>
+		<price>60000</price>
+		<road_tax>50</road_tax>                                 
+		<created_by>Nidhi</created_by>
+	</row>
+	<row type = "Bike">
+		<self_start>True</self_start>
+		<helmet_price>900</helmet_price>
+		<vehicle_no>111</vehicle_no>
+		<make>2001</make>
+		<model>Honda</model>
+		<engineIn_CC>110</engineIn_CC>
+		<fuel_capacity>20</fuel_capacity>
+		<milage>30</milage>
+		<price>60000</price>
+		<road_tax>50</road_tax>                                 
+		<created_by>Nidhi</created_by>
+	</row>
+	<row type = "Bike">
+		<self_start>True</self_start>
+		<helmet_price>700</helmet_price>
+		<vehicle_no>120</vehicle_no>
+		<make>2001</make>
+		<model>Honda</model>
+		<engineIn_CC>110</engineIn_CC>
+		<fuel_capacity>20</fuel_capacity>
+		<milage>30</milage>
+		<price>60000</price>
+		<road_tax>50</road_tax>                                 
+		<created_by>Nidhi</created_by>
+	</row>
+</configBike>

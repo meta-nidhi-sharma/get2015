@@ -1,61 +1,78 @@
 package CaseStudy1;
 
+
 /**
- * @author Akshat
- *
+ * @author Nidhi
+ *Date: 21 september 2015
+ * Description: Car class extending vehicle
  */
-public class Car extends Vehicle {
-	
-	private boolean AC;
-	private boolean powerStearing;
-	private boolean accessoryKit;
+public class Car extends Vehicle 
+{
+	private String AC;
+	private String powerStearing;
+	private String accessoryKit;
 
 	/**
 	 * @return true/false for AC availabilty
 	 */
-	public boolean isAC() {
+	public String isAC()
+	{
 		return AC;
 	}
 
 	/**
 	 * @param AC
 	 */
-	public void setAC(boolean aC) {
-		AC = aC;
+	public void setAC(String aC)
+	{
+		this.AC = aC;
 	}
 
 	/**
 	 * @return true/false for power stearing
 	 */
-	public boolean isPowerStearing() {
+	public String isPowerStearing()
+	{
 		return powerStearing;
 	}
 
 	/**
 	 * @param powerStearing
 	 */
-	public void setPowerStearing(boolean powerStearing) {
+	public void setPowerStearing(String powerStearing) 
+	{
 		this.powerStearing = powerStearing;
 	}
 
 	/**
 	 * @return true/false for accsessory kit
 	 */
-	public boolean isAccessoryKit() {
+	public String isAccessoryKit()
+	{
 		return accessoryKit;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Car [ AC=" + AC + ", powerStearing=" + powerStearing
+				+ ", accessoryKit=" + accessoryKit
+				+ "]" + super.toString();
 	}
 
 	/**
 	 * @param accessoryKit
 	 */
-	public void setAccessoryKit(boolean accessoryKit) {
+	public void setAccessoryKit(String accessoryKit)
+	{
 		this.accessoryKit = accessoryKit;
 	}
 	
 	/* (non-Javadoc)
 	 * @see com.vehiclemanagement.model.Vehicle#calculateOnRoadPrice()
 	 */
-	public double calculateOnRoadPrice(){
+	public double calculateOnRoadPrice()
+	{
 		//override the method to calculate the on road price
 		return getPrice() + getRoadTax()*3;
 	}
