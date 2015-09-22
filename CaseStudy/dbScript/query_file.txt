@@ -1,0 +1,44 @@
+CREATE DATABASE vehicle_management_system;
+
+USE vehicle_management_system;
+
+CREATE TABLE vehicle
+(
+vehicle_no int,
+make YEAR(4),
+model VARCHAR(10),
+engineIn_CC INTEGER,
+fuel_capacity double,
+milage double,
+price double,
+road_tax double,
+created_by VARCHAR(20),
+created_time TIMESTAMP NOT NULL Default NOW(),
+PRIMARY KEY(vehicle_no)
+);
+
+CREATE TABLE bike
+(
+vehicle_no INTEGER,
+self_start VARCHAR(5) CHECK (selfStart IN ('True','False')),
+helmet_price INTEGER,
+FOREIGN KEY(vehicle_no) REFERENCES vehicle(vehicle_no),
+PRIMARY KEY(vehicle_no)
+);
+
+CREATE TABLE car
+(
+vehicle_no INTEGER, 
+ac VARCHAR(5) CHECK (AC IN ('True','False')),
+power_stearing VARCHAR(5) CHECK (power_stearing IN ('True','False')),
+accessory_kit VARCHAR(5) CHECK (accessory_kit IN ('True','False')),
+FOREIGN KEY(vehicle_no) REFERENCES vehicle(vehicle_no),
+PRIMARY KEY(vehicle_no)
+);
+
+SHOW TABLES;
+SELECT* FROM vehicle;
+
+SELECT * FROM Bike;
+
+SELECT * FROM Car;
