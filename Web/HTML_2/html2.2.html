@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link href="htm2.2.css">
+		<title>
+		Registration Form
+		</title>
+	<head>
+	<body>
+	<form align="center">
+
+		<fieldset>
+		
+			<legend style="color:blue;font-weight:bold;">Registration Form</legend>
+			<br>
+			<pre>
+<sup>*</sup>First-name : <input type="textbox" placeholder="First Name" required>
+<br>
+ <sup>*</sup>Last-Name : <input type="textbox" placeholder="Last Name" required>
+
+<br>
+     <sup>*</sup>Email : <input type="Email" placeholder="E-mail ID" required>
+<br>
+  <sup>*</sup>Password : <input type="Password" placeholder="password" required>
+<br>
+<sup>*</sup>Birthday : <input type="date" name="Birth date" min="1990-01-01" max="2000-01-01" required>
+<br>
+<sup>*</sup>Description : <textarea> </textarea>
+<br>
+<sup>*</sup>Communication Skills :   <input type="range" min="1" max="10" step="1" value="5">
+<br>
+<sup>*</sup>Applying For : <input list="vacancies_list" required> 
+
+<datalist id="vacancies_list">
+<option value="Developer">
+<option value="Sales Person">
+<option value="Human Resource">
+<option value="Trainee">
+<option value="Testor">
+</datalist>
+<br>
+<button type="reset">Reset</button>   <button type="submit" name="Submit_Button">Submit</button>
+				   </pre>
+		</fieldset>
+
+	</form>
+	</body>
+</html>

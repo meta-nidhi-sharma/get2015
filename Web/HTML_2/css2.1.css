@@ -1,0 +1,33 @@
+body{
+	background-image : url('http://www.hd-wallpapersdownload.com/upload/bulk-upload/background-flower-pictures-hd-wallpaper.jpg');
+	background-repeat: no-repeat;
+
+}
+header{
+	width : 100%;
+	align : left;
+	margin-left : 2px;
+	
+}
+nav{
+	width : 100%;
+	background-color : #7D0552;
+}
+section{
+	position : absolute;
+	margin-top : 0px;
+	width : 25%;
+	height : 450px;
+}
+
+p{
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+footer{
+	position : absolute;
+	margin-top : 450px;
+	width : 100%;
+	float:left;
+}
