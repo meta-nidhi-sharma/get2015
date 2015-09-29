@@ -1,0 +1,17 @@
+div{
+	margin-top:250px;
+	margin-left:100px;
+	width:200px;
+	height:200px;
+	background-color: red;
+	border:2px solid red;
+	animation-name:example;
+	animation-duration:10s;
+}
+
+@keyframes example {
+    0% {background-color: red;}
+    25% {background-color: yellow;}
+	50% {background-color: pink;}
+	100%{background-color: green;}
+}

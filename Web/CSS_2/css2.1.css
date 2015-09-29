@@ -1,0 +1,24 @@
+html{
+	height:100%;
+}
+body{
+	
+	background-image:url('http://4.bp.blogspot.com/-CL0szPd65OA/Ujfb1v1VSVI/AAAAAAAAQ9k/TCqcS9Ji6NE/s1600/flower_basket_4_brwn_2png.png'),url('http://www.resimsi.com/wp-content/uploads/2015/06/sky-wallpaper-hd1.jpg');
+	background-repeat: no-repeat,no-repeat;
+	background-position:right bottom, left top;
+	background-size: 50%, 100%;
+
+}
+#leaf {
+	border-radius : 0 150px 0 150px;
+	background-color: green;
+	padding: 20px; 
+	width: 100px;
+	height: 100px;   
+	border-style:solid;	
+	border-width:10px 2px 10px 5px;
+	border-color:black;
+	background-repeat:no-repeat,no-repeat;
+	background-position: right top,right bottom;
+}
+
