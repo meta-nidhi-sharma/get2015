@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Registration Form</title>
+        
+        <link rel="stylesheet" href="styleSheet.css"/>
+		<script type="text/javascript" src="JavaScriptAssignment1.js"></script>
+    </head>
+    <body>    
+        <form action="" class="register" >
+            <h1>Registration</h1>
+            <fieldset class="row1">
+			
+                <legend>Personal Details
+                </legend>
+                <p>
+                    <label>First Name *
+                    </label>
+                    <input type="text" placeholder="First Name" required/>
+                    <label>Last Name *
+                    </label>
+                    <input type="text" placeholder="Last Name" required/>
+                </p>
+                <p>
+                    <label>Password*
+                    </label>
+                    <input id="pw" type="password"  placeholder="Enter password here" required/>
+                    <label>Repeat Password*
+                    </label>
+                    <input id="rpw" type="password"  placeholder="Re-type password" required/>
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Personal Details
+                </legend>
+                <p>
+                    <label>Age*
+                    </label>
+                    <input type="number" required/>
+                </p>
+ 
+                <p>
+                    <label>State *
+                    </label>
+                    <input id ="state" type="text" list="states" style="margin-left:10px" onchange="createCity()" required/>
+					<datalist id="states">
+							<option value="Rajasthan">
+							<option value="gujarat">
+							<option value="Uttar pradesh">
+							<option value="uttarakhand">
+							<option value="punjab">
+							
+					</datalist>
+                </p>
+                <p>
+                    <label>City *
+					</label>
+                    <input type="text" id= "city" list="cities" required>
+					<datalist id="cities"></datalist>
+                </p>
+                <p>
+                    <label> Address *
+                    </label>
+                    <textarea row="5" cols ="20"></textarea>
+                </p>
+            </fieldset>
+			</fieldset>
+            <fieldset class="row4">
+                <legend>Terms and Mailing
+                </legend>        
+                   <p> <input id="condition1" type="checkbox" value="" onchange="activateSubmit()"/>
+                    *  I accept the <a href="#">Terms and Conditions</a></p>
+            </fieldset>
+            <div><button id="button" onclick="validate()" disabled>Register</button></div>
+        </form>
+    </body>
+</html>
+
+
+
+
+
