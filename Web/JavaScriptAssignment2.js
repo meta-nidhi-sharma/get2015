@@ -86,13 +86,15 @@ function validate()
 			
 		if(minimum && maximum && nam)
 		{	
-			if(minimum<=maximum)
+			if(minimum<=maximum && minimum<=10 && minimum>=0 && maximum<=10 && maximum>=0)
 			{
 				flag=true;
 			}
 			else
 			{
-				alert("minimum value is greter than max. Enter valid values.");
+				alert("Enter valid values.");
+				flag=false;	
+			break;
 			}
 		}
 		else
