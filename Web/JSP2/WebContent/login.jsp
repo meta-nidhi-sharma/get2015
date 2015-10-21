@@ -9,7 +9,7 @@
 </head>
 	<body> 
 	
-		<form action="LoginCheck" class="sub" method="get">
+		<form action="LoginCheck" class="sub" method="post">
 			<fieldset align="center">
 				<legend><h3>LOGIN</h3></legend>
 				<p>
