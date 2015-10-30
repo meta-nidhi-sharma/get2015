@@ -1,0 +1,52 @@
+body{
+	background-image:url('images/index_back.jpg');
+	background-size:100%;
+	background-repeat:no-repeat;
+	color : black;
+}
+nav{
+	height:5%;
+	width:100%;
+	background-color:red;
+}
+article{
+	border:2px solid black;
+	height:300px;
+	width:25%;
+	float:left;
+}
+#content{
+	text-align: justify;
+    text-justify: inter-word;
+}
+section{
+	float: left;
+    height: 300px;
+    margin-left: 15%;
+    width: 25%;
+}
+.bt{
+	margin-left:10%;
+	margin-top:20%;
+	height:40px;
+	width:100px;
+}
+footer{
+	float:center;
+	margin-top:18%;
+}
+
+#buttonAdmin,#buttonUser{
+			color: white;
+			background-color: maroon;
+			font-weight: bold;
+			width:80px;
+			height:30px;
+		}
+#buttonSave, #buttonSearch {
+			color: white;
+			background-color: maroon;
+			font-weight: bold;
+			width:80px;
+			height:30px;
+		}
