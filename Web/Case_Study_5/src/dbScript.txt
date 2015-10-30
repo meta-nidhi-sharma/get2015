@@ -1,0 +1,92 @@
+DROP DATABASE vehicle_management_system;
+
+CREATE DATABASE vehicle_management_system;
+USE vehicle_management_system;
+DELETE FROM `vehicle_management_system`.`vehicle` WHERE `vehicle_id`='123345';
+CREATE TABLE vehicle
+(
+vehicle_id int,
+make VARCHAR(10),
+model VARCHAR(50),
+engineIn_CC INTEGER,
+fuel_capacity double,
+milage double,
+price double,
+road_tax double,
+created_by VARCHAR(20),
+created_time TIMESTAMP NOT NULL Default NOW(),
+PRIMARY KEY(vehicle_id)
+);
+
+CREATE TABLE bike
+(
+vehicle_id INTEGER,
+self_start VARCHAR(5) CHECK (selfStart IN ('True','False')),
+helmet_price INTEGER,
+FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id),
+PRIMARY KEY(vehicle_id)
+);
+
+CREATE TABLE car
+(
+vehicle_id INTEGER, 
+ac VARCHAR(5) CHECK (AC IN ('True','False')),
+power_stearing VARCHAR(5) CHECK (power_stearing IN ('True','False')),
+accessory_kit VARCHAR(5) CHECK (accessory_kit IN ('True','False')),
+FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id),
+PRIMARY KEY(vehicle_id)
+);
+
+CREATE TABLE user
+(
+userName VARCHAR(20),
+password VARCHAR(20),
+PRIMARY KEY(userName)
+);
+
+SHOW TABLES;
+SELECT* FROM vehicle;
+
+SELECT * FROM Bike;
+
+SELECT * FROM Car;
+
+SELECT * FROM user;
+
+USE vehicle_management_system;
+
+INSERT INTO vehicle (vehicle_id,make,model,engineIn_CC,fuel_Capacity,milage,price,road_Tax,created_by)
+ VALUES (101,'Honda','Honda-city',111,30,7,5000000,500,'Henry');
+INSERT INTO car (vehicle_id, ac, power_stearing, accessory_kit )
+ VALUES (101,'True', 'False', 'True');
+
+
+INSERT INTO vehicle (vehicle_id,make,model,engineIn_CC,fuel_Capacity,milage,price,road_Tax,created_by)
+ VALUES (102,'Honda','Honda-Brio',150,30,7,100000,500,'Richa');
+INSERT INTO car (vehicle_id, ac, power_stearing, accessory_kit )
+ VALUES (102,'True', 'True', 'True');
+
+
+
+INSERT INTO vehicle (vehicle_id,make,model,engineIn_CC,fuel_Capacity,milage,price,road_Tax,created_by)
+ VALUES (105,'Maruti','Maruti-Suzuki',150,30,7,200000,500,'Nidhi');
+INSERT INTO car (vehicle_id, ac, power_stearing, accessory_kit )
+ VALUES (105,'True', 'True', 'True');
+ 
+ INSERT INTO vehicle (vehicle_id,make,model,engineIn_CC,fuel_Capacity,milage,price,road_Tax,created_by)
+ VALUES (103,'Maruti','Maruti-800',150,30,7,4000000,500,'Nidhi');
+INSERT INTO car (vehicle_id, ac, power_stearing, accessory_kit )
+ VALUES (103,'True', 'True', 'False');
+
+ 
+ INSERT INTO user (userName , password) VALUES 
+ ('admin', 'admin');
+ 
+ 
+ 
+ 
+ INSERT INTO vehicle (vehicle_id,make,model,engineIn_CC,fuel_Capacity,milage,price,road_Tax,created_by)
+ VALUES (104,'Hyundai','Hyundai-i20',150,30,7,2000000,500,'Chetna');
+INSERT INTO car (vehicle_id, ac, power_stearing, accessory_kit )
+ VALUES (104,'True', 'True', 'True');
+ 
