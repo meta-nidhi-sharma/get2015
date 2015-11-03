@@ -1,0 +1,16 @@
+CREATE DATABASE company;
+
+USE company;
+
+CREATE TABLE employee(
+id INTEGER,
+name VARCHAR(15),
+designation VARCHAR(25),
+PRIMARY KEY(id)
+);
+
+INSERT INTO employee VALUES(101, 'nidhi', 'trainee'),
+(102, 'richa', 'developer'),
+(103, 'suman', 'salesperson');
+
+SELECT * FROM employee;
