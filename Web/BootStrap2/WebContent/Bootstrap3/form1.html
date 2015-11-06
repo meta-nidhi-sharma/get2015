@@ -25,87 +25,92 @@
   
   
   <div class="form-group">
-    <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Movie title : </small></p>
+    <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Movie title : </small></label>
     </div>
      <div class="col-lg-5 col-md-4 col-sm-7 col-xs-12">
-   <input id="movieField" class="text-center" type="text" style="width:100%; height:30px;">
+   <input id="movieField" type="text" style="width:100%; height:30px;" placeholder="Movie Title">
     </div>
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Genre : </small></p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Genre : </small></label>
     </div>
      <div class="col-lg-5 col-md-4 col-sm-7 col-xs-12">
- 		<select style="width:100%; height:30px;">
-		<option selected>Choose a genre</option>
-		<option>A</option>
-		<option>B</option>
-		<option>C</option>
-		</select>
+ 		<select class="form-control">
+					<option selected="selected" disabled="disabled">Choose a Genre</option>
+					<option>Action</option>
+					<option>Cartoon</option>
+					<option>Comedy</option>
+					<option>Fantasy</option>
+					<option>Horror</option>
+					<option>Musicals</option>
+					<option>Thriller</option>
+					<option>War</option>
+				</select>   
     </div>
     </div>
 
    
      <div class="form-group">
      
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Director : </small></p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Director : </small></label>
     </div>
      <div class="col-lg-2 col-md-4 col-sm-7 col-xs-12">
-   <input type="text" style="width:100%; height:30px;">
+   <input type="text" style="width:100%; height:30px;" placeholder="Director">
     </div>
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Writer : </small></p>
-    </div>
-     <div class="col-lg-2 col-md-4 col-sm-7 col-xs-12">
-   	<input type="text" style="width:100%; height:30px;">
-    </div>
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Producer : </small></p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Writer : </small></label>
     </div>
      <div class="col-lg-2 col-md-4 col-sm-7 col-xs-12">
-  	<input type="text" style="width:100%; height:30px;">
+   	<input type="text" style="width:100%; height:30px;" placeholder="Writer">
     </div>
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left"><small>Composer : </small></p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Producer : </small></label>
     </div>
      <div class="col-lg-2 col-md-4 col-sm-7 col-xs-12">
-   	<input type="text" style="width:100%; height:30px;">
+  	<input type="text" style="width:100%; height:30px;" placeholder="Producer">
+    </div>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left"><small>Composer : </small></label>
+    </div>
+     <div class="col-lg-2 col-md-4 col-sm-7 col-xs-12">
+   	<input type="text" style="width:100%; height:30px;" placeholder="Composer">
     </div>
     </div>
       
   
      <div class="form-group">
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left" style="height:20px;">Website : </p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left" style="height:20px;">Website : </label>
     </div>
      <div class="col-lg-5 col-md-4 col-sm-7 col-xs-12">
-   	<input type="text" style="width:100%; height:30px;">
+   	<input type="text" style="width:100%; height:30px;" placeholder="Website">
     </div>
-     <div class="col-lg-1 col-md-2 col-sm-5 col-xs-12">
-   	<p class="text-left" style="height:20px;">Youtube Trailer : </p>
+     <div class="col-lg-1 col-md-2 col-sm-5 hidden-xs">
+   	<label class="text-left" style="height:20px;">Youtube Trailer : </label>
     </div>
      <div class="col-lg-5 col-md-4 col-sm-7 col-xs-12">
-   	<input type="text" style="width:100%; height:30px;">
+   	<input type="text" style="width:100%; height:30px;" placeholder="Youtube Trailer">
     </div>
     </div> 
     
     
       <div class="form-group">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-   	<p class="text-left">Review : </p>
+      <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+   	<label class="text-left">Review : </label>
     </div>
     </div>
     
     
      <div class="form-group">
        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-   	<textarea row="5" class="clearfix" style="width:100%"></textarea>
+   	<textarea row="5" class="clearfix" style="width:100%" placeholder="Review"></textarea>
     </div>
     </div>
      
          <div class="form-group">
-     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-   	<p class="text-left">Rating : </p>
+     <div class="col-lg-3 col-md-3 col-sm-12 hidden-xs">
+   	<label class="text-left">Rating : </label>
     </div>
      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
    	<input type="radio" class="text-left"><b class="text-left text-danger">Terrible</b>
